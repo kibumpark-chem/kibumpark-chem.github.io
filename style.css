@@ -171,16 +171,18 @@ dd {
   gap: var(--space-4);
 }
 
+.hero-text {
+  min-width: 0;
+}
+
 .avatar {
-  width: 112px;
-  height: 112px;
+  width: 168px;
+  height: 168px;
   flex-shrink: 0;
   border-radius: 50%;
   background-color: var(--accent-soft);
-  background-image: url("photo.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 560px) {
@@ -191,8 +193,8 @@ dd {
   }
 
   .avatar {
-    width: 84px;
-    height: 84px;
+    width: 126px;
+    height: 126px;
   }
 }
 

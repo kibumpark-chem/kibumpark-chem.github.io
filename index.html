@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kibum Park - PhD Candidate, Harvard University</title>
-  <meta name="description" content="Portfolio of Kibum Park, a PhD candidate in Chemistry and Chemical Biology at Harvard University, working on computational protein folding and machine learning." />
+
+  <title>Kibum Park — Computational Chemistry and Protein Biophysics</title>
+
+  <meta
+    name="description"
+    content="Kibum Park combines computational chemistry, protein biophysics, and software development to study protein folding, molecular simulation, and therapeutic discovery."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap"
     rel="stylesheet"
@@ -15,13 +21,15 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap header-row">
-      <a class="mark" href="#top">KP</a>
-      <nav class="nav" aria-label="Primary">
+      <a class="mark" href="#top" aria-label="Go to homepage">KP</a>
+
+      <nav class="nav" aria-label="Primary navigation">
         <a href="#about" data-nav="about">About</a>
         <a href="#research" data-nav="research">Research</a>
         <a href="#publications" data-nav="publications">Publications</a>
@@ -31,177 +39,539 @@
   </header>
 
   <main id="main">
+
+    <!-- Hero -->
     <section id="top" class="hero wrap">
-      <h1 class="hero-name">
-        <span class="reveal" style="--d:0">Kibum Park</span>
-      </h1>
-      <p class="hero-role reveal" style="--d:1">PhD Candidate, Harvard University</p>
-      <p class="hero-line reveal" style="--d:2">
-        Computational chemist and biophysicist specializing in molecular
-        simulation and machine learning for protein folding.
-      </p>
+      <div class="hero-inner">
+        <img
+          class="avatar reveal"
+          style="--d:0"
+          src="resources/main/photo.jpg"
+          alt="Portrait of Kibum Park"
+          width="508"
+          height="508"
+        />
+
+        <div class="hero-text">
+          <h1 class="hero-name">
+            <span class="reveal" style="--d:1">Kibum Park</span>
+          </h1>
+
+          <p class="hero-role reveal" style="--d:2">
+            PhD Candidate, Harvard University
+          </p>
+
+          <p class="hero-line reveal" style="--d:3">
+            I combine computational chemistry, protein biophysics, and software
+            development to understand protein folding and build better tools
+            for therapeutic discovery.
+          </p>
+        </div>
+      </div>
     </section>
 
+    <!-- About -->
     <section id="about" class="about wrap">
       <h2>About</h2>
+
       <div class="about-grid">
-        <p class="about-bio">
-          I'm a PhD candidate in Chemistry and Chemical Biology at Harvard,
-          working with Eugene Shakhnovich to understand the physics of
-          protein folding: why some proteins fold on their own, and why
-          others depend on molecular chaperones to reach their native
-          structure. My work combines molecular simulation with machine
-          learning, from comparing folding landscapes across species to
-          structure prediction with AlphaFold. Before Harvard, I completed a
-          First-Class Honours Master of Chemistry at the University of
-          Oxford. I also organize the Greater Boston Area Theoretical
-          Chemistry Seminar Series, bringing in speakers from BU, MIT, and
-          Harvard.
-        </p>
+        <div class="about-bio">
+          <p>
+            When I was young, I believed that we could simulate everything
+            <em>in silico</em> and obtain precise answers through computation.
+            That belief led me to computational chemistry. As I gained
+            experience, however, I became increasingly interested in the
+            limitations of simulation: how accurately we describe the physical
+            system, how efficiently we explore its conformational space, and
+            how much confidence we can place in the resulting predictions.
+          </p>
+
+          <p>
+            I now study protein folding and biophysics at the intersection of
+            chemistry, physics, and computation. My work focuses on how
+            proteins fold, misfold, and maintain their structural integrity,
+            as well as on the physical principles that shape these processes.
+            I combine molecular simulation, experimentally informed modeling,
+            and software development to connect molecular-scale detail with
+            biologically relevant timescales.
+          </p>
+
+          <p>
+            Collaboration and tool building have shaped how I approach
+            research. I see computation as part of a larger feedback loop:
+            experiments, physical models, and simulation methods continually
+            inform and refine one another. More accurate force fields,
+            biophysical priors, and improved sampling methods can work
+            together to preserve microscopic detail while making larger-scale
+            questions computationally accessible.
+          </p>
+
+          <p>
+            Ultimately, I hope to develop a better understanding of protein
+            biophysics and chemistry while contributing to practical
+            applications in protein and small-molecule therapeutics. I am
+            particularly interested in building reliable computational tools
+            that can be used to investigate challenging biological systems.
+          </p>
+        </div>
+
         <dl class="about-facts">
           <div>
             <dt>Based in</dt>
             <dd>Cambridge, MA</dd>
           </div>
+
           <div>
             <dt>Institution</dt>
-            <dd>Harvard University, Chemistry &amp; Chemical Biology (secondary field: Computer Science &amp; Engineering)</dd>
+            <dd>
+              Harvard University, Chemistry &amp; Chemical Biology
+              <br />
+              Secondary field: Computer Science &amp; Engineering
+            </dd>
           </div>
+
           <div>
             <dt>Advisor</dt>
             <dd>Prof. Eugene Shakhnovich</dd>
           </div>
+
           <div>
-            <dt>Focus</dt>
-            <dd>Protein folding, molecular simulation, machine learning for structural biology</dd>
+            <dt>Research focus</dt>
+            <dd>
+              Protein folding, protein quality control, molecular simulation,
+              knowledge-based force fields, and computational tools for
+              structural biology
+            </dd>
           </div>
+
           <div>
             <dt>Recognition</dt>
-            <dd>Oxford Thesis Prize; Presidential Science Scholarship (South Korea)</dd>
+            <dd>
+              Oxford Thesis Prize; Presidential Science Scholarship,
+              South Korea
+            </dd>
           </div>
         </dl>
       </div>
     </section>
 
+    <!-- Research -->
     <section id="research" class="work wrap">
       <h2>Research</h2>
 
+      <p class="section-intro">
+        My research combines protein biophysics, computational chemistry, and
+        software development. I am interested in both the physical principles
+        governing protein behavior and the computational tools needed to study
+        them efficiently.
+      </p>
+
       <ul class="project-list">
+
+        <!-- Project 1 -->
         <li class="project">
           <div class="project-head">
-            <h3>Doctoral Researcher, Harvard University</h3>
-            <span class="project-year">2020&ndash;Present</span>
+            <h3>Protein Folding &amp; Quality Control</h3>
+            <span class="project-year">Harvard University</span>
           </div>
-          <p class="project-tags">In the Department of Chemistry and Chemical Biology, advised by Prof. Eugene Shakhnovich.</p>
-          <ul class="project-bullets">
-            <li>Compared folding landscapes of chaperone-dependent and independent protein homologs (actin, eEF1A, Rli1) to identify what separates proteins that fold on their own from those that need help.</li>
-            <li>Identified topological traps, such as non-native contacts and hydrophobic core expansion, that lock proteins into misfolding states they can't escape without assistance.</li>
-            <li>Simulated cotranslational folding of the SARS-CoV-2 receptor-binding domain, showing how disulfide bond timing during synthesis steers the protein toward its native structure.</li>
-            <li>Improved AlphaFold3 structure prediction for a disease-linked protein complex by combining it with phylogeny-aware sequence alignments, raising interface confidence from 0.67 to 0.80.</li>
-          </ul>
+
+          <p class="project-desc">
+            I study how proteins navigate complex folding landscapes and how
+            cells help them avoid or escape non-native states. This work is
+            organized around two connected questions: how molecular chaperones
+            reshape folding pathways, and how proteins begin folding while they
+            are still being synthesized.
+          </p>
+
+          <div class="project-subtopics">
+
+            <div class="project-subtopic">
+              <h4>Chaperone-assisted folding</h4>
+
+              <p>
+                I compare chaperone-dependent and chaperone-independent protein
+                homologs to identify the physical features that distinguish
+                proteins capable of folding independently from those that
+                require assistance. Using molecular simulation, I investigate
+                how non-native contacts, topology, and hydrophobic-core
+                formation create kinetic traps and reshape the folding
+                landscape.
+              </p>
+
+              <ul class="project-bullets">
+                <li>
+                  Compared folding landscapes of chaperone-dependent and
+                  independent homologs, including actin, eEF1A, and Rli1.
+                </li>
+                <li>
+                  Identified topological traps involving non-native contacts
+                  and hydrophobic-core expansion that can stabilize misfolded
+                  states.
+                </li>
+                <li>
+                  Studied how chaperone systems alter the energetic and
+                  kinetic accessibility of productive folding pathways.
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-subtopic">
+              <h4>Co-translational folding</h4>
+
+              <p>
+                Proteins do not always fold after synthesis is complete. I
+                study how folding begins during translation and how the timing
+                of chemical events, including disulfide-bond formation, guides
+                a nascent protein toward its native structure.
+              </p>
+
+              <ul class="project-bullets">
+                <li>
+                  Simulated co-translational folding of the SARS-CoV-2 receptor
+                  binding domain.
+                </li>
+                <li>
+                  Investigated how the timing of disulfide-bond formation
+                  influences the folding pathway and final structure.
+                </li>
+                <li>
+                  Studied the role of ribosome-associated chaperones in
+                  vectorial folding of nascent proteins.
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="selected-publications">
+            <h4>Selected publications</h4>
+
+            <ul>
+              <li>
+                <a
+                  href="https://doi.org/10.1038/s41467-025-56489-3"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  A ribosome-associating chaperone mediates GTP-driven vectorial
+                  folding of nascent eEF1A
+                </a>
+                <span>
+                  — <em>Nature Communications</em>, 2025
+                </span>
+              </li>
+
+              <li>
+                <a
+                  href="https://doi.org/10.1016/j.bpj.2023.07.002"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Co-translational formation of disulfides guides folding of the
+                  SARS-CoV-2 receptor binding domain
+                </a>
+                <span>
+                  — <em>Biophysical Journal</em>, 2023
+                </span>
+              </li>
+            </ul>
+          </div>
         </li>
 
+        <!-- Project 2 -->
         <li class="project">
           <div class="project-head">
-            <h3>Computational Chemistry Research Intern, Genesis Therapeutics</h3>
-            <span class="project-year">Jun&ndash;Aug 2024</span>
+            <h3>Knowledge-Based Force Fields</h3>
+            <span class="project-year">Ongoing</span>
           </div>
-          <p class="project-tags">Burlingame, CA</p>
+
+          <p class="project-desc">
+            I am developing knowledge-based force fields that use experimental
+            data to improve the description of protein energetics. The goal is
+            to build models that better capture how individual sequence changes
+            alter protein stability, structure, and function.
+          </p>
+
+          <p>
+            Many current approaches rely heavily on evolutionary information
+            derived from multiple-sequence alignments. While these methods are
+            powerful, they can be less effective for understanding the effects
+            of individual point mutations, particularly when a mutation is
+            poorly represented or absent in available evolutionary data. My
+            work instead focuses on incorporating experimentally measured
+            information into the energy model.
+          </p>
+
           <ul class="project-bullets">
-            <li>Built an OpenMM-based workflow combining grand canonical and non-equilibrium Monte Carlo moves with molecular dynamics simulations, to better sample protein-ligand binding and water networks for detecting cryptic pockets and alternate binding modes.</li>
+            <li>
+              Developing experimentally informed approaches for improving
+              knowledge-based protein force fields.
+            </li>
+            <li>
+              Studying how force fields can better represent the energetic
+              effects of point mutations.
+            </li>
+            <li>
+              Curating benchmark decoy sets for evaluating whether models can
+              distinguish native-like structures from misfolded alternatives.
+            </li>
           </ul>
+
+          <p class="project-link-wrap">
+            <!-- Replace "#" with the URL of the decoy-set curation post. -->
+            <a href="#" class="project-link">
+              Read about the decoy-set curation
+              <span aria-hidden="true">→</span>
+            </a>
+          </p>
         </li>
 
+        <!-- Project 3 -->
         <li class="project">
           <div class="project-head">
-            <h3>Undergraduate Researcher, University of Oxford</h3>
-            <span class="project-year">2018&ndash;2020</span>
+            <h3>Monte Carlo Protein Simulation</h3>
+            <span class="project-year">Software development</span>
           </div>
-          <p class="project-tags">Department of Chemistry, advised by Prof. Brianna Heazlewood.</p>
+
+          <p class="project-desc">
+            I am developing <strong>pyMCPU</strong>, a general-purpose Monte
+            Carlo suite for protein simulation, specialized for studying
+            protein folding, misfolding, and conformational landscapes.
+          </p>
+
+          <p>
+            The framework combines Python and C++ components to support
+            efficient sampling, rapid prototyping, and the development of new
+            simulation methods. The broader goal is to make advanced protein
+            Monte Carlo simulations easier to extend, benchmark, and apply to
+            biophysical questions.
+          </p>
+
           <ul class="project-bullets">
-            <li>Built computational models of molecular reaction rates at ultracold conditions, combining classical and quantum mechanical methods to extract kinetic parameters.</li>
+            <li>
+              Building a Python and C++ framework for Monte Carlo simulation
+              of proteins.
+            </li>
+            <li>
+              Developing cache-efficient data structures for fast sampling of
+              protein energy landscapes.
+            </li>
+            <li>
+              Supporting rapid testing of new collective variables and
+              sampling methods.
+            </li>
+            <li>
+              Designing the software as a general-purpose protein Monte Carlo
+              suite with particular emphasis on folding studies.
+            </li>
           </ul>
+
+          <p class="project-link-wrap">
+            <!-- Replace "#" with the public pyMCPU repository URL. -->
+            <a href="#" class="project-link">
+              View the pyMCPU repository
+              <span aria-hidden="true">→</span>
+            </a>
+          </p>
         </li>
+
       </ul>
     </section>
 
+    <!-- Publications -->
     <section id="publications" class="work wrap">
       <h2>Publications</h2>
 
       <ul class="pub-list">
+
         <li class="pub">
-          <p class="pub-title">A ribosome-associating chaperone mediates GTP-driven vectorial folding of nascent eEF1A</p>
-          <p class="pub-authors">Sabbarini, I., Reif, D., <strong>Park, K.</strong>, et al., Murray, A., &amp; Denic, V.</p>
-          <p class="pub-venue">Nature Communications, 16, 1277 (2025)</p>
+          <p class="pub-title">
+            <a
+              href="https://doi.org/10.1038/s41467-025-56489-3"
+              target="_blank"
+              rel="noopener"
+            >
+              A ribosome-associating chaperone mediates GTP-driven vectorial
+              folding of nascent eEF1A
+            </a>
+          </p>
+
+          <p class="pub-authors">
+            Sabbarini, I. M., Reif, D., <strong>Park, K.</strong>, et al.,
+            Murray, A. W., &amp; Denic, V.
+          </p>
+
+          <p class="pub-venue">
+            <em>Nature Communications</em>, 16, 1277 (2025)
+          </p>
         </li>
+
         <li class="pub">
-          <p class="pub-title">Co-translational formation of disulfides guides folding of the SARS-CoV-2 receptor binding domain</p>
-          <p class="pub-authors">Bitran, A.*, <strong>Park, K.*</strong>, Serebryany, E., &amp; Shakhnovich, E. I. <span class="pub-note">(*co-first author)</span></p>
-          <p class="pub-venue">Biophysical Journal, 122(16), 3238&ndash;3253 (2023)</p>
+          <p class="pub-title">
+            <a
+              href="https://doi.org/10.1016/j.bpj.2023.07.002"
+              target="_blank"
+              rel="noopener"
+            >
+              Co-translational formation of disulfides guides folding of the
+              SARS-CoV-2 receptor binding domain
+            </a>
+          </p>
+
+          <p class="pub-authors">
+            Bitran, A.*, <strong>Park, K.*</strong>, Serebryany, E., &amp;
+            Shakhnovich, E. I.
+            <span class="pub-note">(*co-first author)</span>
+          </p>
+
+          <p class="pub-venue">
+            <em>Biophysical Journal</em>, 122(16), 3238–3253 (2023)
+          </p>
         </li>
+
         <li class="pub">
-          <p class="pub-title">Systematic conformation to phenotype mapping via limited deep sequencing of proteins</p>
-          <p class="pub-authors">Serebryany, E., Zhao, V. Y., <strong>Park, K.</strong>, et al., &amp; Shakhnovich, E. I.</p>
-          <p class="pub-venue">Molecular Cell, 83(11) (2023)</p>
+          <p class="pub-title">
+            <a
+              href="https://doi.org/10.1016/j.molcel.2023.05.006"
+              target="_blank"
+              rel="noopener"
+            >
+              Systematic conformation-to-phenotype mapping via limited
+              deep-sequencing of proteins
+            </a>
+          </p>
+
+          <p class="pub-authors">
+            Serebryany, E., Zhao, V. Y., <strong>Park, K.</strong>, et al.,
+            &amp; Shakhnovich, E. I.
+          </p>
+
+          <p class="pub-venue">
+            <em>Molecular Cell</em>, 83(11), 1936–1952.e7 (2023)
+          </p>
         </li>
+
         <li class="pub">
-          <p class="pub-title">Inverse kinetic isotope effects in the charge transfer reactions of ammonia with rare gas ions</p>
-          <p class="pub-authors">Tsikritea, A., <strong>Park, K.</strong>, Bertier, P., Loreau, J., Softley, T. P., &amp; Heazlewood, B. R.</p>
-          <p class="pub-venue">Chemical Science, 12(29), 10005&ndash;10013 (2021)</p>
+          <p class="pub-title">
+            <a
+              href="https://doi.org/10.1039/D1SC01652K"
+              target="_blank"
+              rel="noopener"
+            >
+              Inverse kinetic isotope effects in the charge transfer reactions
+              of ammonia with rare gas ions
+            </a>
+          </p>
+
+          <p class="pub-authors">
+            Tsikritea, A., <strong>Park, K.</strong>, Bertier, P., Loreau, J.,
+            Softley, T. P., &amp; Heazlewood, B. R.
+          </p>
+
+          <p class="pub-venue">
+            <em>Chemical Science</em>, 12(29), 10005–10013 (2021)
+          </p>
         </li>
+
         <li class="pub">
-          <p class="pub-title">pyMCPU: Monte Carlo utilities for fast sampling of protein folding landscapes</p>
-          <p class="pub-authors"><strong>Park, K.</strong>, &amp; Shakhnovich, E. I.</p>
-          <p class="pub-venue">In preparation</p>
+          <p class="pub-title">
+            pyMCPU: Monte Carlo utilities for fast sampling of protein folding
+            landscapes
+          </p>
+
+          <p class="pub-authors">
+            <strong>Park, K.</strong>, &amp; Shakhnovich, E. I.
+          </p>
+
+          <p class="pub-venue">
+            In preparation
+          </p>
         </li>
+
         <li class="pub">
-          <p class="pub-title">A cooperative chaperone network tunes the folding energy landscape of actin isoforms</p>
-          <p class="pub-authors">Park, J., Kim, H., et al., <strong>Park, K.</strong>, et al., Shakhnovich, E. I., Frydman, J., &amp; Roh, S.</p>
-          <p class="pub-venue">In preparation</p>
+          <p class="pub-title">
+            A cooperative chaperone network tunes the folding energy landscape
+            of actin isoforms
+          </p>
+
+          <p class="pub-authors">
+            Park, J., Kim, H., et al., <strong>Park, K.</strong>, et al.,
+            Shakhnovich, E. I., Frydman, J., &amp; Roh, S.
+          </p>
+
+          <p class="pub-venue">
+            In preparation
+          </p>
         </li>
+
         <li class="pub">
-          <p class="pub-title">Ataxin-10 proteins are chaperones dedicated to ABCE1 biogenesis in eukaryotes</p>
-          <p class="pub-authors">Barba-Aliaga, M., <strong>Park, K.</strong>, et al., Shakhnovich, E. I., &amp; Denic, V.</p>
-          <p class="pub-venue">In preparation</p>
+          <p class="pub-title">
+            Ataxin-10 proteins are chaperones dedicated to ABCE1 biogenesis in
+            eukaryotes
+          </p>
+
+          <p class="pub-authors">
+            Barba-Aliaga, M., <strong>Park, K.</strong>, et al.,
+            Shakhnovich, E. I., &amp; Denic, V.
+          </p>
+
+          <p class="pub-venue">
+            In preparation
+          </p>
         </li>
+
       </ul>
     </section>
 
-    <section id="software" class="work wrap">
-      <h2>Software</h2>
-
-      <ul class="project-list">
-        <li class="project">
-          <div class="project-head">
-            <h3>pyMCPU</h3>
-          </div>
-          <p class="project-desc">A Python and C++ Monte Carlo framework for fast sampling of protein energy landscapes, built with cache-efficient data structures for rapid prototyping of new collective variables.</p>
-          <p class="project-tags">Python, C++, Monte Carlo</p>
-        </li>
-        <li class="project">
-          <div class="project-head">
-            <h3>PhyloMSA</h3>
-          </div>
-          <p class="project-desc">Phylogeny-aware multiple sequence alignment filtering for complex-specific AlphaFold multimer structure prediction.</p>
-          <p class="project-tags">Python, AlphaFold, Bioinformatics</p>
-        </li>
-      </ul>
-    </section>
-
+    <!-- Contact -->
     <section id="contact" class="contact wrap">
       <h2>Get in touch</h2>
-      <p class="contact-line">The best way to reach me is email.</p>
-      <a class="contact-email" href="mailto:kibum_park@fas.harvard.edu">kibum_park@fas.harvard.edu</a>
+
+      <p class="contact-line">
+        I’m always interested in discussing research collaborations, protein
+        biophysics, computational methods, and software development. If your
+        work connects with these areas, feel free to get in touch.
+      </p>
+
+      <a
+        class="contact-email"
+        href="mailto:kibum_park@fas.harvard.edu"
+      >
+        kibum_park@fas.harvard.edu
+      </a>
+
       <div class="contact-social">
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a
+          href="https://github.com/kibumpark-chem"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://scholar.google.com/citations?user=rkS5slAAAAAJ&hl=ko&authuser=1"
+          target="_blank"
+          rel="noopener"
+        >
+          Google Scholar
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/kibum-park/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer wrap">
-    <p>&copy; <span id="year"></span> Kibum Park. Built with plain HTML and CSS.</p>
+    <p>
+      &copy; <span id="year"></span> Kibum Park. Built with plain HTML and CSS.
+    </p>
   </footer>
 
   <script src="script.js"></script>

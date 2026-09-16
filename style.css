@@ -523,6 +523,11 @@ section h2 {
   border-bottom: none;
 }
 
+.last-visible-publication {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 .pub-title {
   max-width: 72ch;
   font-size: 18px;
@@ -563,6 +568,10 @@ section h2 {
   color: var(--accent);
   font-size: 14px;
   font-style: italic;
+}
+
+.hidden-publication {
+  display: none;
 }
 
 /* -------------------------------------------------

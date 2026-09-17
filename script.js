@@ -21,16 +21,20 @@ const sections = Array.from(document.querySelectorAll("main section[id]")).filte
 );
 
 if (sections.length) {
-  const header = document.querySelector(".site-header");
-
   const updateActiveNav = () => {
-    const line = (header ? header.offsetHeight : 0) + 24;
+    // Read the offset from the CSS rather than re-deriving it here: an anchor
+    // jump lands a section at its own scroll-margin-top, so the spy line has to
+    // be that same number or the two disagree wherever the header height changes.
+    const line = parseFloat(getComputedStyle(sections[0]).scrollMarginTop) || 0;
 
     // The last section whose top has scrolled past the header is the one we are in.
+    // An anchor jump lands a section within a sub-pixel of the line rather than
+    // exactly on it -- layout positions are fractional, scroll offsets are not --
+    // so allow a pixel of slack, or the comparison flips at some viewport widths.
     let current = null;
 
     sections.forEach((section) => {
-      if (section.getBoundingClientRect().top <= line) {
+      if (section.getBoundingClientRect().top - line <= 1) {
         current = section;
       }
     });

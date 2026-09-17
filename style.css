@@ -15,6 +15,9 @@
   --content-width: 1180px;
   --gutter: 32px;
 
+  /* Full height of the sticky header, its 1px bottom border included. */
+  --header-h: 65px;
+
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -97,8 +100,12 @@ select {
   margin-inline: auto;
 }
 
+/* Where an anchor jump parks a section. script.js reads this exact computed
+   value for its scroll-spy line, so the two cannot drift apart. It is set
+   unconditionally, not on :target, so the script can read it at any time. */
+main section[id],
 :target {
-  scroll-margin-top: 88px;
+  scroll-margin-top: calc(var(--header-h) + var(--space-3));
 }
 
 /* -------------------------------------------------
@@ -141,7 +148,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 64px;
+  min-height: calc(var(--header-h) - 1px);
 }
 
 .mark {
@@ -190,6 +197,13 @@ select {
    Hero
 ------------------------------------------------- */
 .hero {
+  /* The portrait rides the same 7vw progression as the display name (~3x its
+     size) so the two stay in proportion at every width, rather than the picture
+     stepping between fixed sizes while the type scales fluidly. Its own floor
+     and cap keep it from shrinking to a thumbnail or outgrowing the text block. */
+  --hero-name-size: clamp(42px, 7vw, 76px);
+  --avatar-size: clamp(150px, 21vw, 228px);
+
   padding-top: var(--space-6);
   padding-bottom: var(--space-5);
 }
@@ -205,9 +219,12 @@ select {
 }
 
 .avatar {
-  width: 190px;
-  height: 190px;
+  width: var(--avatar-size);
+  /* height:auto is required: the width/height HTML attributes apply as
+     presentational hints, so without it the 508px height attribute wins. */
+  height: auto;
   flex: 0 0 auto;
+  aspect-ratio: 1;
   border-radius: 50%;
   background-color: var(--accent-soft);
   object-fit: cover;
@@ -215,7 +232,7 @@ select {
 }
 
 .hero-name {
-  font-size: clamp(42px, 7vw, 76px);
+  font-size: var(--hero-name-size);
   letter-spacing: -0.02em;
 }
 
@@ -659,11 +676,6 @@ section h2 {
     gap: var(--space-4);
   }
 
-  .avatar {
-    width: 160px;
-    height: 160px;
-  }
-
   .about-grid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
@@ -685,13 +697,8 @@ section h2 {
     gap: var(--space-3);
   }
 
-  .avatar {
-    width: 132px;
-    height: 132px;
-  }
-
-  .hero-name {
-    font-size: clamp(40px, 13vw, 58px);
+  .hero {
+    --hero-name-size: clamp(40px, 13vw, 58px);
   }
 
   .hero-role {
@@ -724,10 +731,7 @@ section h2 {
 @media (max-width: 420px) {
   :root {
     --gutter: 20px;
-  }
-
-  .header-row {
-    min-height: 56px;
+    --header-h: 57px;
   }
 
   .nav {

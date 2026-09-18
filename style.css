@@ -418,16 +418,19 @@ section h2 {
   gap: var(--space-3);
 }
 
-/* Each card is a surface rather than a rule-separated row: the border, the
-   tint and the lift on hover are what say the whole card is a link. */
+/* A card rather than a rule-separated row: a raised surface with its own edge
+   and a shadow that deepens as it lifts. The surface is what says the whole
+   thing is a link, so nothing inside has to shout it. */
 .project {
   padding: var(--space-4);
   border: 1px solid var(--line);
-  border-radius: 6px;
-  background: color-mix(in srgb, #fff 55%, var(--paper));
+  border-radius: 10px;
+  background: color-mix(in srgb, #fff 80%, var(--paper));
+  box-shadow: 0 1px 2px rgba(22, 24, 29, 0.04);
   transition:
     border-color 0.2s ease,
     background-color 0.2s ease,
+    box-shadow 0.2s ease,
     transform 0.2s ease;
 }
 
@@ -458,16 +461,13 @@ section h2 {
   text-decoration-color: var(--accent);
 }
 
-/* Footer of each card: the wording on the left, the affordance on the right. */
-.project-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-}
-
+/* A quiet label closing the card, in the same small-caps key as the rest of
+   the site. The card carries the affordance, so this does not need to. */
 .project-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-4);
   color: var(--accent);
   font-size: 13px;
   font-weight: 600;
@@ -475,30 +475,6 @@ section h2 {
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.2s ease;
-}
-
-/* Borrowed from the hero social buttons, so the site keeps one vocabulary for
-   a thing you are meant to hit. */
-.project-arrow {
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: var(--paper);
-  color: var(--ink-soft);
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.project-arrow svg {
-  width: 17px;
-  height: 17px;
 }
 
 .arrow {
@@ -516,12 +492,13 @@ section h2 {
 
 .project.is-clickable:hover,
 .project:focus-within {
-  border-color: var(--accent);
-  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  background: #fff;
+  box-shadow: 0 10px 28px -10px rgba(22, 24, 29, 0.16);
 }
 
 .project.is-clickable:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .project.is-clickable:hover h3 a,
@@ -530,15 +507,9 @@ section h2 {
   text-decoration-color: var(--accent);
 }
 
-.project.is-clickable:hover .project-arrow,
-.project:focus-within .project-arrow {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: var(--paper);
-}
-
-.project.is-clickable:hover .project-arrow {
-  transform: translateX(3px);
+.project.is-clickable:hover .arrow,
+.project:focus-within .arrow {
+  transform: translateX(4px);
 }
 
 .project-meta {
@@ -1014,6 +985,18 @@ section h2 {
     grid-template-columns: minmax(0, 1fr) minmax(200px, 260px);
     gap: var(--space-4);
   }
+
+  /* Inside a padded card there is no longer room for the category to sit on
+     one line beside the title without crushing it, so the head stacks. */
+  .project-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .project-meta {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1079,21 +1062,12 @@ section h2 {
     font-size: 27px;
   }
 
-  .project-head {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 4px;
-  }
-
   .project-head h3 {
     font-size: 23px;
   }
 
-  /* The head is a column at this width, so the category no longer has to hold
-     one line beside the title -- and holding it overflowed the padded card. */
   .project-meta {
     font-size: 13px;
-    white-space: normal;
   }
 
   .project {
@@ -1164,8 +1138,8 @@ section h2 {
   .page-nav-next:hover .arrow,
   .project,
   .project.is-clickable:hover,
-  .project-arrow,
-  .project.is-clickable:hover .project-arrow {
+  .project.is-clickable:hover .arrow,
+  .project:focus-within .arrow {
     transition: none;
     transform: none;
   }

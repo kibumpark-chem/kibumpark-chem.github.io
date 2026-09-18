@@ -197,12 +197,13 @@ main section[id],
    Hero
 ------------------------------------------------- */
 .hero {
-  /* The portrait rides the same 7vw progression as the display name (~3x its
+  /* The portrait rides the same 7vw progression as the display name (~3.5x its
      size) so the two stay in proportion at every width, rather than the picture
      stepping between fixed sizes while the type scales fluidly. Its own floor
-     and cap keep it from shrinking to a thumbnail or outgrowing the text block. */
+     and cap keep it from shrinking to a thumbnail or outgrowing the text block.
+     The cap is what binds on a laptop: 25vw only wins below ~1200px. */
   --hero-name-size: clamp(42px, 7vw, 76px);
-  --avatar-size: clamp(160px, 23vw, 254px);
+  --avatar-size: clamp(176px, 25vw, 300px);
 
   padding-top: var(--space-6);
   padding-bottom: var(--space-5);
@@ -211,7 +212,10 @@ main section[id],
 .hero-inner {
   display: flex;
   align-items: center;
-  gap: clamp(var(--space-4), 6vw, var(--space-6));
+  /* The floor matches the flat gap the <=760px rule sets, so the spacing only
+     ever grows with the viewport -- at 6vw it used to open to 96px on a wide
+     screen and push the name away from the portrait. */
+  gap: clamp(var(--space-4), 3.4vw, var(--space-5));
 }
 
 .hero-text {
@@ -416,6 +420,18 @@ section h2 {
 .project-list {
   display: grid;
   gap: var(--space-3);
+  /* The cards used to run the full 1180px wrap while every other block on the
+     page sits between 717px and 825px, so they read as panels that had escaped
+     the column. This is sized from the text they hold: .project-desc's own 70ch
+     measure (784px at 18px) plus the card's 40px padding and 1px border on each
+     side. The description then fills the card exactly, with no dead space, and
+     its right edge lands on the publication list's.
+
+     Not 78ch/825px, which would put the card border itself on the publication
+     rules: that leaves only 743px inside, and the second card's head needs 760
+     (513px title + 24 gap + 223 nowrap category), so its title breaks to two
+     lines at every desktop width. Measured, not estimated. */
+  max-width: 866px;
 }
 
 /* A card rather than a rule-separated row: a raised surface with its own edge
@@ -976,18 +992,11 @@ section h2 {
 /* -------------------------------------------------
    Responsive layout
 ------------------------------------------------- */
-@media (max-width: 900px) {
-  :root {
-    --gutter: 28px;
-  }
-
-  .about-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(200px, 260px);
-    gap: var(--space-4);
-  }
-
-  /* Inside a padded card there is no longer room for the category to sit on
-     one line beside the title without crushing it, so the head stacks. */
+/* The card head is a title beside a nowrap category, which together need 760px.
+   That only fits once the card has reached its full 866px (784px inside), which
+   happens above 960px. Below that the wrap still binds, the card is narrower,
+   and the row would crush the longer title -- so the head stacks from here. */
+@media (max-width: 960px) {
   .project-head {
     align-items: flex-start;
     flex-direction: column;
@@ -996,6 +1005,17 @@ section h2 {
 
   .project-meta {
     white-space: normal;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 28px;
+  }
+
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 260px);
+    gap: var(--space-4);
   }
 }
 

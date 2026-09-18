@@ -221,115 +221,35 @@
         <!-- Project 1 -->
         <li class="project">
           <div class="project-head">
-            <h3>Protein Folding &amp; Quality Control</h3>
+            <h3>
+              <a href="research/protein-folding.html">
+                Protein Folding &amp; Quality Control
+              </a>
+            </h3>
             <span class="project-meta">Protein Biophysics &amp; Computational Biology</span>
           </div>
 
           <p class="project-desc">
-            I study how proteins navigate complex folding landscapes and how
-            cells help them avoid or escape non-native states. This work is
-            organized around two connected questions: how molecular chaperones
-            reshape folding pathways, and how proteins begin folding while they
-            are still being synthesized.
+            I study how proteins navigate complex folding landscapes and how cells help them avoid, resolve, or recover from non-native states. My work centers on two connected questions: how molecular chaperones reshape folding pathways, and how proteins fold cotranslationally as they are being synthesized.
           </p>
 
-          <div class="project-subtopics">
-
-            <div class="project-subtopic">
-              <h4>Chaperone-assisted folding</h4>
-
-              <p>
-                I compare chaperone-dependent and chaperone-independent
-                homologs to find the physical features that separate them.
-                Using molecular simulation, I investigate how non-native
-                contacts, chain topology, and hydrophobic-core formation
-                create kinetic traps and reshape the folding landscape.
-              </p>
-
-              <ul class="project-bullets">
-                <li>
-                  Compared folding landscapes of chaperone-dependent and
-                  -independent homologs, including actin, eEF1A, and Rli1.
-                </li>
-                <li>
-                  Identified topological traps involving non-native contacts
-                  and hydrophobic-core expansion that can stabilize misfolded
-                  states.
-                </li>
-                <li>
-                  Studied how chaperone systems alter the energetic and
-                  kinetic accessibility of productive folding pathways.
-                </li>
-              </ul>
-            </div>
-
-            <div class="project-subtopic">
-              <h4>Co-translational folding</h4>
-
-              <p>
-                Folding does not always wait for synthesis to finish. I study
-                how folding begins during translation, and how the timing of
-                chemical events such as disulfide-bond formation guides a
-                nascent chain toward its native structure.
-              </p>
-
-              <ul class="project-bullets">
-                <li>
-                  Simulated co-translational folding of the SARS-CoV-2
-                  receptor-binding domain.
-                </li>
-                <li>
-                  Investigated how the timing of disulfide-bond formation
-                  influences the folding pathway and final structure.
-                </li>
-                <li>
-                  Studied the role of ribosome-associated chaperones in
-                  vectorial folding of nascent proteins.
-                </li>
-              </ul>
-            </div>
-
-          </div>
-
-          <div class="selected-publications">
-            <h4>Selected publications</h4>
-
-            <ul>
-              <li>
-                <a
-                  href="https://doi.org/10.1038/s41467-025-56489-3"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  A ribosome-associating chaperone mediates GTP-driven vectorial
-                  folding of nascent eEF1A
-                </a>
-                <span>
-                  — <em>Nature Communications</em>, 2025
-                </span>
-              </li>
-
-              <li>
-                <a
-                  href="https://doi.org/10.1016/j.bpj.2023.07.002"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Co-translational formation of disulfides guides folding of the
-                  SARS-CoV-2 receptor binding domain
-                </a>
-                <span>
-                  — <em>Biophysical Journal</em>, 2023
-                </span>
-              </li>
-            </ul>
-          </div>
+          <a
+            class="project-more"
+            href="research/protein-folding.html"
+            aria-label="Read more about Protein Folding &amp; Quality Control"
+          >
+            Read more <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
         </li>
 
         <!-- Project 2 -->
         <li class="project">
           <div class="project-head">
-            <h3>Conformational Sampling &amp; Energy Models</h3>
+            <h3>
+              <a href="research/conformational-sampling.html">
+                Conformational Sampling &amp; Energy Models
+              </a>
+            </h3>
             <span class="project-meta">Method &amp; software development</span>
           </div>
 
@@ -341,95 +261,13 @@
             knowledge-based potential, and in the Monte Carlo move set.
           </p>
 
-          <div class="project-subtopics">
-
-            <div class="project-subtopic">
-              <h4>Knowledge-based force fields</h4>
-
-              <p>
-                I am developing knowledge-based force fields that use
-                experimental data to improve the description of protein
-                energetics. Many current approaches rely on evolutionary
-                information from multiple sequence alignments, which is powerful
-                but less effective for individual point mutations that are poorly
-                represented in the available data. My work instead incorporates
-                experimentally measured information directly into the energy
-                model.
-              </p>
-
-              <ul class="project-bullets">
-                <li>
-                  Developing experimentally informed approaches for improving
-                  knowledge-based protein force fields.
-                </li>
-                <li>
-                  Studying how force fields can better represent the energetic
-                  effects of point mutations.
-                </li>
-                <li>
-                  Curating benchmark decoy sets that test whether a model can
-                  distinguish native and near-native structures from non-native
-                  decoys.
-                </li>
-              </ul>
-            </div>
-
-            <div class="project-subtopic">
-              <h4>Monte Carlo simulation</h4>
-
-              <p>
-                I am developing <strong>pyMCPU</strong>, a Monte Carlo suite for
-                protein simulation, built with protein folding, misfolding, and
-                conformational landscapes in mind. Its Python and C++ components
-                support efficient sampling, rapid prototyping, and the
-                development of new simulation methods.
-              </p>
-
-              <ul class="project-bullets">
-                <li>
-                  Building a Python and C++ framework for Monte Carlo simulation
-                  of proteins.
-                </li>
-                <li>
-                  Developing cache-efficient data structures for fast sampling of
-                  protein energy landscapes.
-                </li>
-                <li>
-                  Supporting rapid testing of new collective variables and
-                  sampling methods.
-                </li>
-              </ul>
-            </div>
-
-          </div>
-
-          <div class="selected-publications">
-            <h4>Code</h4>
-
-            <ul>
-              <li>
-                <a
-                  href="https://github.com/kibumpark-chem/PhyloMSA"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  PhyloMSA
-                </a>
-                <span>
-                  &mdash; phylogeny-aware MSA pipeline for protein&ndash;protein
-                  complex prediction in co-folding models
-                </span>
-              </li>
-
-              <li>
-                pyMCPU
-                <span>
-                  &mdash; Monte Carlo suite for protein simulation;
-                  public release in preparation
-                </span>
-              </li>
-            </ul>
-          </div>
+          <a
+            class="project-more"
+            href="research/conformational-sampling.html"
+            aria-label="Read more about Conformational Sampling &amp; Energy Models"
+          >
+            Read more <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
         </li>
 
       </ul>

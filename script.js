@@ -71,3 +71,44 @@ if (sections.length) {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
 }
+
+/* -------------------------------------------------
+   Widen each research card's hit area to the whole row
+   The title and "Read more" links are the real navigation targets; this only
+   saves aiming at them. It stays out of the way of a nested link, of a
+   modified click, and of a drag that was selecting text rather than clicking,
+   so the summaries remain selectable and copyable.
+------------------------------------------------- */
+document.querySelectorAll(".project").forEach((card) => {
+  const link = card.querySelector(".project-more");
+
+  if (!link) {
+    return;
+  }
+
+  // Added from script so the pointer and hover styles never promise a click
+  // that would not happen -- with JS off the card is plain text again.
+  card.classList.add("is-clickable");
+
+  card.addEventListener("click", (event) => {
+    // A link of its own handles the navigation.
+    if (event.target.closest("a")) {
+      return;
+    }
+
+    // The drag selected text; treat it as a selection, not a click.
+    const selection = window.getSelection();
+
+    if (selection && selection.toString().length > 0) {
+      return;
+    }
+
+    // Honour the usual "open elsewhere" modifiers.
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      window.open(link.href, "_blank", "noopener");
+      return;
+    }
+
+    window.location.href = link.href;
+  });
+});

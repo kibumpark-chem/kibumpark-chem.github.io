@@ -8,20 +8,27 @@ if (yearEl) {
 }
 
 /* -------------------------------------------------
-   Highlight the nav link for the section in view
+   Highlight the link for the section in view
+   Two sets of links want this: the primary nav on the home page, and the
+   "on this page" rail on a research page. Each marks its current link
+   .active, and each is inert on the pages where its links do not exist.
 ------------------------------------------------- */
-const navLinks = new Map();
+const createScrollSpy = (linkSelector) => {
+  const links = new Map();
 
-document.querySelectorAll('.nav a[href^="#"]').forEach((link) => {
-  navLinks.set(link.getAttribute("href").slice(1), link);
-});
+  document.querySelectorAll(linkSelector).forEach((link) => {
+    links.set(link.getAttribute("href").slice(1), link);
+  });
 
-const sections = Array.from(document.querySelectorAll("main section[id]")).filter((section) =>
-  navLinks.has(section.id)
-);
+  const sections = Array.from(document.querySelectorAll("main section[id]")).filter((section) =>
+    links.has(section.id)
+  );
 
-if (sections.length) {
-  const updateActiveNav = () => {
+  if (!sections.length) {
+    return;
+  }
+
+  const updateActiveLink = () => {
     // Read the offset from the CSS rather than re-deriving it here: an anchor
     // jump lands a section at its own scroll-margin-top, so the spy line has to
     // be that same number or the two disagree wherever the header height changes.
@@ -47,7 +54,7 @@ if (sections.length) {
       current = sections[sections.length - 1];
     }
 
-    navLinks.forEach((link, id) => {
+    links.forEach((link, id) => {
       link.classList.toggle("active", current !== null && id === current.id);
     });
   };
@@ -62,15 +69,20 @@ if (sections.length) {
     queued = true;
 
     window.requestAnimationFrame(() => {
-      updateActiveNav();
+      updateActiveLink();
       queued = false;
     });
   };
 
-  updateActiveNav();
+  updateActiveLink();
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
-}
+};
+
+// On a research page the primary nav points back at index.html, so its links
+// do not match and only the rail spins up. On the home page, the reverse.
+createScrollSpy('.nav a[href^="#"]');
+createScrollSpy('.toc a[href^="#"]');
 
 /* -------------------------------------------------
    Widen each research card's hit area to the whole row

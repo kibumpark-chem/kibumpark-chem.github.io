@@ -77,90 +77,120 @@
         </p>
       </header>
 
-      <section class="detail" id="knowledge-based-force-fields">
-        <h2>Knowledge-based force fields</h2>
+      <div class="page-body">
 
-        <p>
-          I am developing knowledge-based force fields that use experimental
-          data to improve the description of protein energetics. Many current
-          approaches rely on evolutionary information from multiple sequence
-          alignments, which is powerful but less effective for individual point
-          mutations that are poorly represented in the available data. My work
-          instead incorporates experimentally measured information directly into
-          the energy model.
-        </p>
+        <!-- The rail comes first in the source so it reads, and stacks on a
+             phone, ahead of the sections it indexes. Grid places it right. -->
+        <aside class="page-rail">
+          <nav class="toc" aria-labelledby="toc-heading">
+            <p class="toc-title" id="toc-heading">On this page</p>
 
-        <ul class="project-bullets">
-          <li>
-            Developing experimentally informed approaches for improving
-            knowledge-based protein force fields.
-          </li>
-          <li>
-            Studying how force fields can better represent the energetic effects
-            of point mutations.
-          </li>
-          <li>
-            Curating benchmark decoy sets that test whether a model can
-            distinguish native and near-native structures from non-native
-            decoys.
-          </li>
-        </ul>
-      </section>
+            <ol>
+              <li>
+                <a href="#knowledge-based-force-fields">Knowledge-based force fields</a>
+              </li>
+              <li>
+                <a href="#monte-carlo-simulation">Monte Carlo simulation</a>
+              </li>
+              <li>
+                <a href="#code">Code</a>
+              </li>
+            </ol>
+          </nav>
+        </aside>
 
-      <section class="detail" id="monte-carlo-simulation">
-        <h2>Monte Carlo simulation</h2>
+        <div class="page-main">
 
-        <p>
-          I am developing <strong>pyMCPU</strong>, a Monte Carlo suite for
-          protein simulation, built with protein folding, misfolding, and
-          conformational landscapes in mind. Its Python and C++ components
-          support efficient sampling, rapid prototyping, and the development of
-          new simulation methods.
-        </p>
+          <section class="detail" id="knowledge-based-force-fields">
+            <h2>Knowledge-based force fields</h2>
 
-        <ul class="project-bullets">
-          <li>
-            Building a Python and C++ framework for Monte Carlo simulation of
-            proteins.
-          </li>
-          <li>
-            Developing cache-efficient data structures for fast sampling of
-            protein energy landscapes.
-          </li>
-          <li>
-            Supporting rapid testing of new collective variables and sampling
-            methods.
-          </li>
-        </ul>
-      </section>
+            <p>
+              I am developing knowledge-based force fields that use experimental
+              data to improve the description of protein energetics. Many
+              current approaches rely on evolutionary information from multiple
+              sequence alignments, which is powerful but less effective for
+              individual point mutations that are poorly represented in the
+              available data. My work instead incorporates experimentally
+              measured information directly into the energy model.
+            </p>
 
-      <section class="detail detail-list" id="code">
-        <h2>Code</h2>
+            <ul class="detail-bullets">
+              <li>
+                Developing experimentally informed approaches for improving
+                knowledge-based protein force fields.
+              </li>
+              <li>
+                Studying how force fields can better represent the energetic
+                effects of point mutations.
+              </li>
+              <li>
+                Curating benchmark decoy sets that test whether a model can
+                distinguish native and near-native structures from non-native
+                decoys.
+              </li>
+            </ul>
+          </section>
 
-        <ul>
-          <li>
-            <a
-              href="https://github.com/kibumpark-chem/PhyloMSA"
-              target="_blank"
-              rel="noopener"
-            >
-              PhyloMSA
-            </a>
-            <span>
-              &mdash; phylogeny-aware MSA pipeline for protein&ndash;protein
-              complex prediction in co-folding models
-            </span>
-          </li>
+          <section class="detail" id="monte-carlo-simulation">
+            <h2>Monte Carlo simulation</h2>
 
-          <li>
-            pyMCPU
-            <span>
-              &mdash; Monte Carlo suite for protein simulation; public release in
-              preparation
-            </span>
-          </li>
-        </ul>
-      </section>
+            <p>
+              I am developing <strong>pyMCPU</strong>, a Monte Carlo suite for
+              protein simulation, built with protein folding, misfolding, and
+              conformational landscapes in mind. Its Python and C++ components
+              support efficient sampling, rapid prototyping, and the development
+              of new simulation methods.
+            </p>
+
+            <ul class="detail-bullets">
+              <li>
+                Building a Python and C++ framework for Monte Carlo simulation
+                of proteins.
+              </li>
+              <li>
+                Developing cache-efficient data structures for fast sampling of
+                protein energy landscapes.
+              </li>
+              <li>
+                Supporting rapid testing of new collective variables and
+                sampling methods.
+              </li>
+            </ul>
+          </section>
+
+          <section class="detail" id="code">
+            <h2>Code</h2>
+
+            <ul class="res-list">
+              <li class="res-item">
+                <a
+                  class="res-title"
+                  href="https://github.com/kibumpark-chem/PhyloMSA"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  PhyloMSA
+                </a>
+
+                <span class="res-note">
+                  Phylogeny-aware MSA pipeline for protein&ndash;protein complex
+                  prediction in co-folding models
+                </span>
+              </li>
+
+              <li class="res-item">
+                <span class="res-title res-title-plain">pyMCPU</span>
+
+                <span class="res-note">
+                  Monte Carlo suite for protein simulation; public release in
+                  preparation
+                </span>
+              </li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
 
       <nav class="page-nav" aria-label="Other research areas">
         <a class="page-nav-back" href="../index.html#research">

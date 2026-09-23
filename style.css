@@ -536,10 +536,12 @@ section h2 {
   max-width: 70ch;
   margin-top: var(--space-2);
   color: var(--ink-soft);
-  /* Two steps below the 17px body base, and the same size as the publication
-     authors line: these summaries sit in a 679px card, not the page column, so
-     they read as a precis rather than as more of the same running text. */
-  font-size: 15px;
+  /* Three steps below the 17px body base: these summaries sit in a 679px card,
+     not the page column, so they read as a precis rather than as more of the
+     same running text. The 70ch cap above earns its keep at this size -- the
+     card's full inner width would be 78 characters a line, past the comfortable
+     band, because shrinking the type fits more of it on the same measure. */
+  font-size: 14px;
 }
 
 /* -------------------------------------------------

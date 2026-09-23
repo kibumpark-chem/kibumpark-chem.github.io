@@ -13,6 +13,12 @@
   <meta name="author" content="Kibum Park" />
   <link rel="canonical" href="https://kibumpark-chem.github.io/" />
 
+  <!-- ORCID iD, for indexers rather than readers: nothing here renders on the
+       page. This is the canonical public form of the identifier; the
+       orcid.org/my-orcid?orcid=... address is the signed-in management view
+       and only resolves for the account owner. -->
+  <link rel="me" href="https://orcid.org/0000-0002-3750-7206" />
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kibumpark-chem.github.io/" />
   <meta property="og:title" content="Kibum Park — Computational Chemistry and Protein Biophysics" />
@@ -32,6 +38,29 @@
   />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured data. Scholarly indexers and search engines read this to tie
+       the site to the ORCID record; it is never rendered. -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0002-3750-7206",
+      "name": "Kibum Park",
+      "url": "https://kibumpark-chem.github.io/",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "https://orcid.org/0000-0002-3750-7206"
+      },
+      "sameAs": [
+        "https://orcid.org/0000-0002-3750-7206",
+        "https://scholar.google.com/citations?user=rkS5slAAAAAJ",
+        "https://github.com/kibumpark-chem",
+        "https://www.linkedin.com/in/kibum-park/"
+      ]
+    }
+  </script>
 </head>
 
 <body>
@@ -230,7 +259,7 @@
           </div>
 
           <p class="project-desc">
-            I study how proteins navigate complex folding landscapes and how cells help them avoid, resolve, or recover from non-native states. My work centers on two connected questions: how molecular chaperones reshape folding pathways, and how proteins fold cotranslationally as they are being synthesized.
+            I study how protein sequence shapes folding landscapes and how cellular factors—including chaperones and cotranslational folding—modulate the pathways by which proteins reach, maintain, or recover their native states. By characterizing the dynamics and energetics of folding, I aim to understand how cellular folding environments buffer sequence variation and shape the evolution of functional proteins. This biophysical perspective can add a new dimension to sequence-based analyses, enabling deeper insights from large metagenomic datasets beyond conventional alignment-based approaches.
           </p>
 
           <a
@@ -346,7 +375,7 @@
           </p>
         </li>
 
-        <li class="pub last-visible-publication">
+        <li class="pub">
           <p class="pub-title">
             <a
               href="https://doi.org/10.1039/D1SC01652K"
@@ -368,6 +397,19 @@
           </p>
         </li>
 
+        <li class="pub last-visible-publication">
+          <p class="pub-title">
+            Cooperative TRiC/CCT Chaperone Networks Tune the Distinct Folding Energy Landscapes of Actin Isoforms
+          </p>
+
+          <p class="pub-authors">
+            Park, J., Kim, H., Park, J., Gestaut, D., <strong>Park, K.</strong>,
+            Zhang, S., Crider, A., Shakhnovich, E. I., Frydman, J., &amp; Roh, S.
+          </p>
+
+          <p class="pub-venue">Submitted to <em>Cell</em></p>
+        </li>
+
         <li class="pub hidden-publication">
           <p class="pub-title">
             pyMCPU: Monte Carlo utilities for fast sampling of protein folding
@@ -376,20 +418,6 @@
 
           <p class="pub-authors">
             <strong>Park, K.</strong>, &amp; Shakhnovich, E. I.
-          </p>
-
-          <p class="pub-venue">In preparation</p>
-        </li>
-
-        <li class="pub hidden-publication">
-          <p class="pub-title">
-            A cooperative chaperone network tunes the folding energy landscape
-            of actin isoforms
-          </p>
-
-          <p class="pub-authors">
-            Park, J., Kim, H., Park, J., Gestaut, D., <strong>Park, K.</strong>,
-            Zhang, S., Crider, A., Shakhnovich, E. I., Frydman, J., &amp; Roh, S.
           </p>
 
           <p class="pub-venue">In preparation</p>

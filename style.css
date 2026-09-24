@@ -828,6 +828,22 @@ section h2 {
   font-size: 18px;
 }
 
+/* A section runs to several paragraphs now, and the global `p { margin: 0 }`
+   would set them solid, so the rhythm has to be restored here. */
+.detail p + p {
+  margin-top: var(--space-3);
+}
+
+/* Subsection heading. It deliberately takes no counter -- the numerals belong
+   to the h2s, so an h3 reads as a subdivision of one rather than a peer -- and
+   it leans on space above to separate it from the paragraph it follows. */
+.detail h3 {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
 .detail p strong {
   color: var(--ink);
   font-weight: 600;

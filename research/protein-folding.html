@@ -4,23 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Protein Folding &amp; Quality Control — Kibum Park</title>
+  <title>Protein Folding — Kibum Park</title>
 
   <meta
     name="description"
-    content="Research on how proteins navigate complex folding landscapes and how cells help them avoid, resolve, or recover from non-native states: chaperone-assisted folding and co-translational folding."
+    content="Research on how protein sequence shapes conformational landscapes and how folding landscapes connect to biological function, cellular context, and phenotype."
   />
   <meta name="author" content="Kibum Park" />
-  <link rel="canonical" href="https://kibumpark-chem.github.io/research/protein-folding.html" />
+
+  <link
+    rel="canonical"
+    href="https://kibumpark-chem.github.io/research/protein-folding.html"
+  />
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://kibumpark-chem.github.io/research/protein-folding.html" />
-  <meta property="og:title" content="Protein Folding &amp; Quality Control — Kibum Park" />
+  <meta
+    property="og:url"
+    content="https://kibumpark-chem.github.io/research/protein-folding.html"
+  />
+  <meta property="og:title" content="Protein Folding — Kibum Park" />
   <meta
     property="og:description"
-    content="How molecular chaperones reshape folding pathways, and how proteins fold cotranslationally as they are being synthesized."
+    content="How protein sequence shapes conformational landscapes and how folding landscapes connect to biological function, cellular context, and phenotype."
   />
-  <meta property="og:image" content="https://kibumpark-chem.github.io/resources/main/photo.jpg" />
+  <meta
+    property="og:image"
+    content="https://kibumpark-chem.github.io/resources/main/photo.jpg"
+  />
   <meta name="twitter:card" content="summary" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,7 +49,9 @@
 
   <header class="site-header">
     <div class="wrap header-row">
-      <a class="mark" href="../index.html" aria-label="Kibum Park — home">KP</a>
+      <a class="mark" href="../index.html" aria-label="Kibum Park — home">
+        KP
+      </a>
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="../index.html#about">About</a>
@@ -55,7 +67,8 @@
 
       <p class="back-link">
         <a href="../index.html#research">
-          <span class="arrow" aria-hidden="true">&larr;</span> Research
+          <span class="arrow" aria-hidden="true">&larr;</span>
+          Research
         </a>
       </p>
 
@@ -65,37 +78,47 @@
         </p>
 
         <h1 class="page-title reveal" style="--d:1">
-          Protein Folding &amp; Quality Control
+          Protein Folding
         </h1>
 
         <p class="page-lede reveal" style="--d:2">
-          I study how proteins navigate complex folding landscapes and how cells
-          help them avoid, resolve, or recover from non-native states. My work
-          centers on two connected questions: how molecular chaperones reshape
-          folding pathways, and how proteins fold cotranslationally as they are
-          being synthesized.
-
-          <!-- I study how protein sequence shapes folding landscapes and how cellular biogenesis modulates the pathways by which proteins reach, maintain, or recover their native states. By characterizing the dynamics and energetics of folding, I aim to investigate how folding constraints contribute to sequence variation and the evolution of protein function. This perspective provides a biophysical complement to sequence-based analyses and may enable deeper interpretation of metagenomic diversity beyond conventional alignment-based approaches. -->
+          Protein sequence shapes an energetic landscape containing native
+          states, kinetic barriers, and competing non-native conformations.
+          My research focuses on characterizing these landscapes computationally
+          and connecting their physical features to biological function. I also
+          investigate how protein biogenesis—including translation, the
+          ribosome, and molecular chaperones—perturbs these landscapes and
+          redirects folding in cellular contexts.
         </p>
       </header>
 
       <div class="page-body">
 
-        <!-- The rail comes first in the source so it reads, and stacks on a
-             phone, ahead of the sections it indexes. Grid places it right. -->
         <aside class="page-rail">
           <nav class="toc" aria-labelledby="toc-heading">
             <p class="toc-title" id="toc-heading">On this page</p>
 
             <ol>
               <li>
-                <a href="#chaperone-assisted-folding">Chaperone-assisted folding</a>
+                <a href="#conformational-landscapes">
+                  Conformational landscapes and phenotype
+                </a>
               </li>
+
               <li>
-                <a href="#co-translational-folding">Co-translational folding</a>
+                <a href="#folding-in-cellular-context">
+                  Folding in cellular context
+                </a>
               </li>
+
               <li>
-                <a href="#selected-publications">Selected publications</a>
+                <a href="#outlook">Outlook</a>
+              </li>
+
+              <li>
+                <a href="#selected-publications">
+                  Selected publications
+                </a>
               </li>
             </ol>
           </nav>
@@ -103,63 +126,132 @@
 
         <div class="page-main">
 
-          <section class="detail" id="chaperone-assisted-folding">
-            <h2>Chaperone-assisted folding</h2>
+          <section class="detail" id="conformational-landscapes">
+            <h2>Conformational landscapes and phenotype</h2>
 
             <p>
-              I compare chaperone-dependent and chaperone-independent homologs to
-              find the physical features that separate them. Using molecular
-              simulation, I investigate how non-native contacts, chain topology,
-              and hydrophobic-core formation create kinetic traps and reshape the
-              folding landscape.
+              My primary research focuses on characterizing the conformational
+              landscapes populated by proteins and connecting these states to
+              biological function. Using molecular simulation, computational
+              modeling, and high-throughput structural data, I investigate how
+              non-native interactions, chain topology, and energetic frustration
+              give rise to alternative conformations and kinetic traps.
             </p>
 
-            <ul class="detail-bullets">
-              <li>
-                Compared folding landscapes of chaperone-dependent and
-                -independent homologs, including actin, eEF1A, and Rli1.
-              </li>
-              <li>
-                Identified topological traps involving non-native contacts and
-                hydrophobic-core expansion that can stabilize misfolded states.
-              </li>
-              <li>
-                Studied how chaperone systems alter the energetic and kinetic
-                accessibility of productive folding pathways.
-              </li>
-            </ul>
+            <p>
+              A central goal is to move beyond a binary distinction between
+              folded and misfolded states. Distinct conformational ensembles can
+              have different structures, dynamics, stabilities, and biological
+              consequences. By mapping these states and relating them to
+              phenotype, I seek to identify physical principles that connect
+              protein sequence to function.
+            </p>
+
+            <p>
+              In one line of work, I developed and applied computational and
+              high-throughput approaches to map conformational states and their
+              phenotypic consequences. These studies revealed how alternative
+              conformations stabilized by non-native contacts or topological
+              features can produce distinct biological outcomes.
+            </p>
           </section>
 
-          <section class="detail" id="co-translational-folding">
-            <h2>Co-translational folding</h2>
+          <section class="detail" id="folding-in-cellular-context">
+            <h2>Folding in cellular context</h2>
 
             <p>
-              Folding does not always wait for synthesis to finish. I study how
-              folding begins during translation, and how the timing of chemical
-              events such as disulfide-bond formation guides a nascent chain
-              toward its native structure.
+              I extend this landscape-based perspective to the biological
+              environments in which folding occurs. In collaborative studies, I
+              have investigated how molecular chaperones, the ribosome,
+              translation, and cotranslational chemical events alter the
+              conformational routes available to nascent proteins.
             </p>
 
-            <ul class="detail-bullets">
-              <li>
-                Simulated co-translational folding of the SARS-CoV-2
-                receptor-binding domain.
-              </li>
-              <li>
-                Investigated how the timing of disulfide-bond formation
-                influences the folding pathway and final structure.
-              </li>
-              <li>
-                Studied the role of ribosome-associated chaperones in vectorial
-                folding of nascent proteins.
-              </li>
-            </ul>
+            <h3 id="chaperone-assisted-folding">
+              Chaperone-modulated folding
+            </h3>
+
+            <p>
+              Chaperones can recognize vulnerable intermediates, stabilize
+              non-native states, and redirect proteins toward productive folding
+              pathways. Using molecular simulation and computational analysis, I
+              compare chaperone-dependent and chaperone-independent proteins to
+              identify the landscape features that create chaperone dependence.
+            </p>
+
+            <p>
+              In studies of actin, eEF1A, and Rli1, I investigated how
+              non-native contacts, chain topology, and hydrophobic-core
+              formation create kinetic traps and alter the accessibility of
+              productive folding pathways. These systems illustrate how
+              cellular folding machinery can modulate, rather than simply
+              accelerate, the exploration of a sequence-dependent landscape.
+            </p>
+
+            <h3 id="co-translational-folding">
+              Cotranslational folding
+            </h3>
+
+            <p>
+              Folding begins before protein synthesis is complete. In
+              collaborative studies, I contributed computational modeling and
+              analysis to investigate how the vectorial emergence of a nascent
+              chain, its interaction with the ribosome, and the timing of
+              chemical events such as disulfide-bond formation reshape the
+              folding landscape during synthesis.
+            </p>
+
+            <p>
+              For the SARS-CoV-2 receptor-binding domain, we examined how
+              cotranslational disulfide formation can favor native folding
+              before competing non-native states become accessible. In a
+              separate study of eEF1A, we investigated how a ribosome-associated
+              chaperone and GTP binding cooperate to protect a vulnerable
+              nascent domain and promote productive folding.
+            </p>
+          </section>
+
+          <section class="detail" id="outlook">
+            <h2>Outlook</h2>
+
+            <p>
+              My long-term goal is to develop computational and biophysical
+              frameworks that connect sequence, conformational landscapes, and
+              biological phenotype. Folding constraints represent one component
+              of protein evolution alongside biochemical function, stability,
+              dynamics, aggregation, and cellular context.
+            </p>
+
+            <p>
+              Incorporating folding energetics, kinetics, and conformational
+              heterogeneity into sequence-based analysis may provide a
+              complementary way to interpret functional variation in large
+              metagenomic datasets. Such an approach could help distinguish
+              sequence changes that alter biochemical activity from those that
+              primarily affect folding behavior or dependence on cellular
+              assistance.
+            </p>
           </section>
 
           <section class="detail" id="selected-publications">
             <h2>Selected publications</h2>
 
             <ul class="res-list">
+              <li class="res-item">
+                <a
+                  class="res-title"
+                  href="#"
+                  aria-label="Systematic conformation-to-phenotype mapping via limited deep sequencing of proteins"
+                >
+                  Systematic conformation-to-phenotype mapping via limited deep
+                  sequencing of proteins
+                </a>
+
+                <span class="res-note">
+                  <em>Molecular Cell</em>, 2023
+                </span>
+              </li>
+
               <li class="res-item">
                 <a
                   class="res-title"
@@ -183,7 +275,7 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  Co-translational formation of disulfides guides folding of the
+                  Cotranslational formation of disulfides guides folding of the
                   SARS-CoV-2 receptor binding domain
                 </a>
 
@@ -199,14 +291,21 @@
 
       <nav class="page-nav" aria-label="Other research areas">
         <a class="page-nav-back" href="../index.html#research">
-          <span class="arrow" aria-hidden="true">&larr;</span> All research
+          <span class="arrow" aria-hidden="true">&larr;</span>
+          All research
         </a>
 
-        <a class="page-nav-next" href="conformational-sampling.html">
+        <a
+          class="page-nav-next"
+          href="conformational-sampling.html"
+        >
           <span class="page-nav-text">
             <span class="page-nav-label">Next</span>
-            <span class="page-nav-title">Conformational Sampling &amp; Energy Models</span>
+            <span class="page-nav-title">
+              Conformational Sampling &amp; Energy Models
+            </span>
           </span>
+
           <span class="arrow" aria-hidden="true">&rarr;</span>
         </a>
       </nav>
@@ -215,7 +314,9 @@
   </main>
 
   <footer class="site-footer wrap">
-    <p>&copy; <span id="year">2026</span> Kibum Park</p>
+    <p>
+      &copy; <span id="year">2026</span> Kibum Park
+    </p>
   </footer>
 
   <script src="../script.js"></script>

@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Method and software development for protein simulation: experimentally informed knowledge-based force fields, and pyMCPU, a Monte Carlo suite for sampling protein folding landscapes."
+    content="Method and software development for protein simulation: pyMCPU, a complete Monte Carlo package ready for release through pip and conda, together with statistical potentials and machine-learned sampling priors."
   />
   <meta name="author" content="Kibum Park" />
   <link rel="canonical" href="https://kibumpark-chem.github.io/research/conformational-sampling.html" />
@@ -18,7 +18,7 @@
   <meta property="og:title" content="Conformational Sampling &amp; Energy Models — Kibum Park" />
   <meta
     property="og:description"
-    content="Energy functions that rank structures correctly, sampling that can reach them, and the software that makes both usable."
+    content="Statistical potentials that rank structures correctly, Monte Carlo moves that reach them without bias, and pyMCPU, a complete simulation package ready for pip and conda."
   />
   <meta property="og:image" content="https://kibumpark-chem.github.io/resources/main/photo.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -70,10 +70,14 @@
 
         <p class="page-lede reveal" style="--d:2">
           Studying a folding landscape reliably takes two things: an energy
-          function that ranks structures correctly, and sampling that can
-          actually reach them. I work on both, and on the software that makes
-          them usable. Machine learning enters on both sides: in the
-          knowledge-based potential, and in the Monte Carlo move set.
+          function that ranks structures correctly, and sampling that reaches
+          them efficiently without biasing their equilibrium populations. To
+          make both practical, I have built pyMCPU, a complete Monte Carlo
+          package for protein simulation that is now ready for release through
+          pip and conda. On this foundation, I am developing statistical
+          potentials for protein energetics and Monte Carlo moves that use
+          knowledge-based and machine-learned priors while satisfying detailed
+          balance.
         </p>
       </header>
 
@@ -87,10 +91,16 @@
 
             <ol>
               <li>
-                <a href="#knowledge-based-force-fields">Knowledge-based force fields</a>
+                <a href="#pymcpu">pyMCPU</a>
               </li>
               <li>
-                <a href="#monte-carlo-simulation">Monte Carlo simulation</a>
+                <a href="#statistical-potentials">Statistical potentials</a>
+              </li>
+              <li>
+                <a href="#detailed-balance">Sampling under detailed balance</a>
+              </li>
+              <li>
+                <a href="#outlook">Outlook</a>
               </li>
               <li>
                 <a href="#code">Code</a>
@@ -101,61 +111,120 @@
 
         <div class="page-main">
 
-          <section class="detail" id="knowledge-based-force-fields">
-            <h2>Knowledge-based force fields</h2>
+          <section class="detail" id="pymcpu">
+            <h2>pyMCPU</h2>
 
             <p>
-              I am developing knowledge-based force fields that use experimental
-              data to improve the description of protein energetics. Many
-              current approaches rely on evolutionary information from multiple
-              sequence alignments, which is powerful but less effective for
-              individual point mutations that are poorly represented in the
-              available data. My work instead incorporates experimentally
-              measured information directly into the energy model.
+              <strong>pyMCPU</strong> is a Monte Carlo package for protein
+              simulation, built with folding, misfolding, and conformational
+              landscapes in mind. It is complete and ready for public release
+              through pip and conda, so it can be installed and used like any
+              other scientific Python package.
             </p>
 
-            <ul class="detail-bullets">
-              <li>
-                Developing experimentally informed approaches for improving
-                knowledge-based protein force fields.
-              </li>
-              <li>
-                Studying how force fields can better represent the energetic
-                effects of point mutations.
-              </li>
-              <li>
-                Curating benchmark decoy sets that test whether a model can
-                distinguish native and near-native structures from non-native
-                decoys.
-              </li>
-            </ul>
+            <p>
+              The package pairs a C++ engine, which uses cache-efficient data
+              structures for fast sampling, with a Python interface for rapid
+              prototyping. New collective variables and sampling methods can be
+              implemented and tested quickly, which makes pyMCPU the platform
+              for the methods described below.
+            </p>
           </section>
 
-          <section class="detail" id="monte-carlo-simulation">
-            <h2>Monte Carlo simulation</h2>
+          <section class="detail" id="statistical-potentials">
+            <h2>Statistical potentials</h2>
 
             <p>
-              I am developing <strong>pyMCPU</strong>, a Monte Carlo suite for
-              protein simulation, built with protein folding, misfolding, and
-              conformational landscapes in mind. Its Python and C++ components
-              support efficient sampling, rapid prototyping, and the development
-              of new simulation methods.
+              I develop statistical potentials: energy functions derived from
+              the statistics of experimentally determined protein structures.
+              Because such a potential is defined over three-dimensional
+              structure, the same function that ranks conformations can also
+              drive the simulations that explore them.
             </p>
 
-            <ul class="detail-bullets">
-              <li>
-                Building a Python and C++ framework for Monte Carlo simulation
-                of proteins.
-              </li>
-              <li>
-                Developing cache-efficient data structures for fast sampling of
-                protein energy landscapes.
-              </li>
-              <li>
-                Supporting rapid testing of new collective variables and
-                sampling methods.
-              </li>
-            </ul>
+            <p>
+              Many current approaches to protein modeling draw on evolutionary
+              information from multiple sequence alignments. That information
+              is powerful, but it is less effective for individual point
+              mutations that are poorly represented in the available data. My
+              work instead incorporates experimental measurements directly into
+              the potential, with the aim of representing the energetic effects
+              of point mutations more accurately.
+            </p>
+
+            <p>
+              To evaluate these potentials, I curate benchmark decoy sets that
+              test whether a model can distinguish native and near-native
+              structures from non-native decoys. This is a basic requirement
+              for simulation: a potential that cannot rank native structures
+              above their alternatives cannot be trusted to describe a folding
+              landscape.
+            </p>
+          </section>
+
+          <section class="detail" id="detailed-balance">
+            <h2>Sampling under detailed balance</h2>
+
+            <p>
+              Monte Carlo simulation explores a landscape by proposing moves
+              and accepting or rejecting them. When the moves satisfy detailed
+              balance, the simulation samples the equilibrium distribution
+              defined by the energy function, so the populations and free
+              energies it reports reflect the potential rather than artifacts
+              of the move set. My aim is to make moves more efficient without
+              giving up this guarantee.
+            </p>
+
+            <h3 id="knowledge-based-moves">
+              Knowledge-based moves
+            </h3>
+
+            <p>
+              In a densely packed protein, random perturbations are frequently
+              rejected, which slows sampling. Knowledge-based moves instead
+              propose local conformations drawn from the statistics of known
+              protein structures, making each proposal more likely to be
+              accepted. Because these proposals are biased, the acceptance step
+              corrects for that bias, as detailed balance requires. The moves
+              therefore speed up sampling without shifting the equilibrium.
+            </p>
+
+            <h3 id="machine-learned-priors">
+              Machine-learned priors
+            </h3>
+
+            <p>
+              I am extending this approach with data-driven priors: proposal
+              distributions learned from structural data using machine
+              learning. Learned models can represent correlated,
+              high-dimensional conformational distributions that are difficult
+              to capture with tabulated statistics. Because the same
+              detailed-balance correction applies, these priors can accelerate
+              exploration of a landscape while leaving its equilibrium
+              unchanged.
+            </p>
+          </section>
+
+          <section class="detail" id="outlook">
+            <h2>Outlook</h2>
+
+            <p>
+              My long-term goal is to make simulations of protein
+              conformational landscapes both reliable and practical at scale.
+              That means pairing interpretable statistical potentials with
+              machine-learned components that accelerate sampling, while
+              preserving the thermodynamic guarantees on which trustworthy
+              simulation depends.
+            </p>
+
+            <p>
+              Releasing pyMCPU through pip and conda is a step toward making
+              these methods available to other researchers. Ultimately, I hope
+              these tools will help address questions from my protein folding
+              research, such as how non-native interactions give rise to
+              alternative conformations and kinetic traps, across many more
+              proteins.
+            </p>
           </section>
 
           <section class="detail" id="code">
@@ -182,8 +251,8 @@
                 <span class="res-title res-title-plain">pyMCPU</span>
 
                 <span class="res-note">
-                  Monte Carlo suite for protein simulation; public release in
-                  preparation
+                  Complete Monte Carlo package for protein simulation; ready for
+                  release through pip and conda
                 </span>
               </li>
             </ul>
@@ -200,7 +269,7 @@
         <a class="page-nav-next" href="protein-folding.html">
           <span class="page-nav-text">
             <span class="page-nav-label">Previous</span>
-            <span class="page-nav-title">Protein Folding &amp; Quality Control</span>
+            <span class="page-nav-title">Protein Folding</span>
           </span>
           <span class="arrow" aria-hidden="true">&rarr;</span>
         </a>

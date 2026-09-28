@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Method and software development for protein simulation: pyMCPU, a complete Monte Carlo package ready for release through pip and conda, together with statistical potentials and machine-learned sampling priors."
+    content="Method and software development for protein simulation: pyMCPU, a Monte Carlo package being prepared for release through pip and conda, together with statistical potentials and machine-learned sampling priors."
   />
   <meta name="author" content="Kibum Park" />
   <link rel="canonical" href="https://kibumpark-chem.github.io/research/conformational-sampling.html" />
@@ -18,7 +18,7 @@
   <meta property="og:title" content="Conformational Sampling &amp; Energy Models — Kibum Park" />
   <meta
     property="og:description"
-    content="Statistical potentials that rank structures correctly, Monte Carlo moves that reach them without bias, and pyMCPU, a complete simulation package ready for pip and conda."
+    content="Statistical potentials that rank structures correctly, Monte Carlo moves that reach them without bias, and pyMCPU, a simulation package being prepared for release through pip and conda."
   />
   <meta property="og:image" content="https://kibumpark-chem.github.io/resources/main/photo.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -72,12 +72,12 @@
           Studying a folding landscape reliably takes two things: an energy
           function that ranks structures correctly, and sampling that reaches
           them efficiently without biasing their equilibrium populations. To
-          make both practical, I have built pyMCPU, a complete Monte Carlo
-          package for protein simulation that is now ready for release through
-          pip and conda. On this foundation, I am developing statistical
-          potentials for protein energetics and Monte Carlo moves that use
-          knowledge-based and machine-learned priors while satisfying detailed
-          balance.
+          make both practical, I have built pyMCPU, a Monte Carlo package for
+          protein simulation that is being prepared for release through pip
+          and conda. Its core engine is complete, and so is its move set,
+          which uses knowledge-based and machine-learned priors while
+          satisfying detailed balance. On this foundation, I am developing
+          statistical potentials for protein energetics.
         </p>
       </header>
 
@@ -117,9 +117,10 @@
             <p>
               <strong>pyMCPU</strong> is a Monte Carlo package for protein
               simulation, built with folding, misfolding, and conformational
-              landscapes in mind. It is complete and ready for public release
-              through pip and conda, so it can be installed and used like any
-              other scientific Python package.
+              landscapes in mind. Its core engine and move set are complete;
+              its statistical potential is still in development. pyMCPU is being
+              prepared for release through pip and conda, so that it can be
+              installed and used like any other scientific Python package.
             </p>
 
             <p>
@@ -147,9 +148,12 @@
               information from multiple sequence alignments. That information
               is powerful, but it is less effective for individual point
               mutations that are poorly represented in the available data. My
-              work instead incorporates experimental measurements directly into
-              the potential, with the aim of representing the energetic effects
-              of point mutations more accurately.
+              work instead refines how the current knowledge-based potential
+              describes atoms, with the aim of representing the energetic
+              effects of point mutations more accurately. That potential sorts
+              side-chain atoms into 79 discrete types, which forces chemically
+              similar atoms into rigid bins. I am testing continuous atom types,
+              learned by a graph neural network (GNN), in their place.
             </p>
 
             <p>
@@ -158,7 +162,9 @@
               structures from non-native decoys. This is a basic requirement
               for simulation: a potential that cannot rank native structures
               above their alternatives cannot be trusted to describe a folding
-              landscape.
+              landscape. Alongside these benchmarks, I reserve experimental
+              mutational data for validation; I do not use it to build or fit
+              the potential.
             </p>
           </section>
 
@@ -194,11 +200,11 @@
             </h3>
 
             <p>
-              I am extending this approach with data-driven priors: proposal
-              distributions learned from structural data using machine
-              learning. Learned models can represent correlated,
-              high-dimensional conformational distributions that are difficult
-              to capture with tabulated statistics. Because the same
+              I have extended this approach with priors from ESM protein
+              language models, which are trained on protein sequences. ESM
+              biases the proposals for Ramachandran (backbone) and rotamer
+              (side-chain) moves, so the moves become sequence-aware: what they
+              propose depends on the sequence being simulated. Because the same
               detailed-balance correction applies, these priors can accelerate
               exploration of a landscape while leaving its equilibrium
               unchanged.
@@ -218,8 +224,9 @@
             </p>
 
             <p>
-              Releasing pyMCPU through pip and conda is a step toward making
-              these methods available to other researchers. Ultimately, I hope
+              pyMCPU is being prepared for release through pip and
+              conda, as a step toward making these methods available to
+              other researchers. Ultimately, I hope
               these tools will help address questions from my protein folding
               research, such as how non-native interactions give rise to
               alternative conformations and kinetic traps, across many more
@@ -234,16 +241,16 @@
               <li class="res-item">
                 <a
                   class="res-title"
-                  href="https://github.com/kibumpark-chem/PhyloMSA"
+                  href="https://github.com/kibumpark-chem/OrthoPairMSA"
                   target="_blank"
                   rel="noopener"
                 >
-                  PhyloMSA
+                  OrthoPairMSA
                 </a>
 
                 <span class="res-note">
-                  Phylogeny-aware MSA pipeline for protein&ndash;protein complex
-                  prediction in co-folding models
+                  Species-paired MSA pipeline for protein complex prediction
+                  with co-folding models (AlphaFold3, Protenix, Boltz)
                 </span>
               </li>
 
@@ -251,8 +258,9 @@
                 <span class="res-title res-title-plain">pyMCPU</span>
 
                 <span class="res-note">
-                  Complete Monte Carlo package for protein simulation; ready for
-                  release through pip and conda
+                  Monte Carlo package for protein simulation (core engine and
+                  move set complete; statistical potential in development);
+                  being prepared for release through pip and conda
                 </span>
               </li>
             </ul>

@@ -148,11 +148,12 @@
             </p>
 
             <p>
-              In one line of work, I developed and applied computational and
-              high-throughput approaches to map conformational states and their
-              phenotypic consequences. These studies revealed how alternative
-              conformations stabilized by non-native contacts or topological
-              features can produce distinct biological outcomes.
+              In one line of work, I contributed simulations to a
+              high-throughput disulfide-scanning study of the disordered
+              chaperone HdeA; collaborators developed and ran the scanning
+              experiments. By simulating disulfide-trapped HdeA variants, I
+              proposed structural features (hydrophobicity and dimer
+              dissociation) that we then compared with in vivo toxicity.
             </p>
           </section>
 
@@ -174,18 +175,35 @@
             <p>
               Chaperones can recognize vulnerable intermediates, stabilize
               non-native states, and redirect proteins toward productive folding
-              pathways. Using molecular simulation and computational analysis, I
-              compare chaperone-dependent and chaperone-independent proteins to
-              identify the landscape features that create chaperone dependence.
+              pathways. Yet homologs of the same protein can differ in whether
+              they need a chaperone at all. I compare the simulated folding
+              landscapes of homologs that do and do not depend on a chaperone,
+              alongside experiments by the Denic, Frydman, and Roh labs. I use
+              these comparative folding landscapes to pinpoint the features,
+              such as hydrophobicity, that set the two groups apart.
             </p>
 
             <p>
-              In studies of actin, eEF1A, and Rli1, I investigated how
-              non-native contacts, chain topology, and hydrophobic-core
-              formation create kinetic traps and alter the accessibility of
-              productive folding pathways. These systems illustrate how
+              Across the actin, eEF1A, and Rli1/ABCE1 homologs, the causes of
+              chaperone dependence differ. In actin, dependence traces to
+              disrupted packing of the compact subdomain 1 (SD1) core; in eEF1A
+              and Rli1, non-native contacts stabilize non-native intermediates.
+              These systems illustrate how
               cellular folding machinery can modulate, rather than simply
               accelerate, the exploration of a sequence-dependent landscape.
+            </p>
+
+            <p>
+              For Rli1, I studied Ctr86 as its dedicated chaperone and needed
+              structures of the yeast Rli1&ndash;Ctr86 complex to generate
+              poses, but AlphaFold3 confidently predicted only the human
+              ABCE1&ndash;Ataxin-10 complex. I therefore built OrthoPairMSA,
+              which assembles species-paired multiple sequence alignments from
+              ortholog groups (eggNOG, OrthoDB, or InterPro), pairing one
+              representative per shared species by NCBI taxonomy ID, and writes
+              inputs for AlphaFold3, Protenix, and Boltz. With these alignments,
+              the interface confidence score (ipTM) for Rli1&ndash;Ctr86 rose
+              from 0.67 to 0.80, which made pose generation possible.
             </p>
 
             <h3 id="co-translational-folding">
@@ -194,17 +212,18 @@
 
             <p>
               Folding begins before protein synthesis is complete. In
-              collaborative studies, I contributed computational modeling and
-              analysis to investigate how the vectorial emergence of a nascent
-              chain, its interaction with the ribosome, and the timing of
-              chemical events such as disulfide-bond formation reshape the
-              folding landscape during synthesis.
+              collaborative studies, we investigated how the vectorial
+              emergence of a nascent chain, its interaction with the ribosome,
+              and the timing of chemical events such as disulfide-bond
+              formation reshape the folding landscape during synthesis.
             </p>
 
             <p>
-              For the SARS-CoV-2 receptor-binding domain, we examined how
-              cotranslational disulfide formation can favor native folding
-              before competing non-native states become accessible. In a
+              For the SARS-CoV-2 receptor-binding domain (RBD), we examined how
+              cotranslational disulfide formation can favor native folding. My
+              simulations of RBD synthesis predicted that native cysteine pairs
+              come together partway through translation, before the protein
+              can misfold into an aggregation-prone state. In a
               separate study of eEF1A, we investigated how a ribosome-associated
               chaperone and GTP binding cooperate to protect a vulnerable
               nascent domain and promote productive folding.
@@ -276,12 +295,34 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  Cotranslational formation of disulfides guides folding of the
+                  Co-translational formation of disulfides guides folding of the
                   SARS-CoV-2 receptor binding domain
                 </a>
 
                 <span class="res-note">
                   <em>Biophysical Journal</em>, 2023
+                </span>
+              </li>
+
+              <li class="res-item">
+                <span class="res-title res-title-plain">
+                  Cooperative TRiC/CCT chaperone networks tune the distinct
+                  folding energy landscapes of actin isoforms
+                </span>
+
+                <span class="res-note">
+                  Submitted to <em>Cell</em>
+                </span>
+              </li>
+
+              <li class="res-item">
+                <span class="res-title res-title-plain">
+                  Ataxin-10 proteins are chaperones dedicated to ABCE1
+                  biogenesis in eukaryotes
+                </span>
+
+                <span class="res-note">
+                  In preparation
                 </span>
               </li>
             </ul>
